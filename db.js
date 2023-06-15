@@ -9,7 +9,7 @@ const config = {
     password: "123456",
     max: 5,
     idleTimeoutMillis: 3000,
-};
+}; 
 
 const pool = new Pool(config);
 

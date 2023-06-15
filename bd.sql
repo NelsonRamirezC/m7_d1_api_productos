@@ -12,3 +12,23 @@ INSERT INTO productos VALUES (default, 'Televisor 50 pulgadas Samsung', 'Televis
 
 select * from productos where id = '2';
 
+
+--crear tabla usuarios y agregar extenxión pgcrypto para generar uuid en BD.
+
+CREATE EXTENSION "pgcrypto";
+
+
+CREATE TABLE USUARIOS (
+	id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+	data JSONB
+);
+
+	
+SELECT * FROM USUARIOS;
+
+
+SELECT * FROM pg_available_extensions
+
+
+SELECT * FROM USUARIOS WHERE data->>'apellido' = 'Castillo';
+
