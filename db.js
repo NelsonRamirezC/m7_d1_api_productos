@@ -19,8 +19,10 @@ const consulta = (query) => {
         try {
             client = await pool.connect();
             const result = await client.query(query);
+            console.log(result.rows);
             resolve(result.rows);
         } catch (error) {
+            console.log(error.message);
             reject("error al consultar los productos a la BD.");
         } finally {
             try {
@@ -34,6 +36,5 @@ const consulta = (query) => {
         }
     });
 };
-
 
 export default consulta;

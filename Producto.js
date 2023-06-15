@@ -13,8 +13,9 @@ class Producto {
         return new Promise(async (resolve, reject) => {
             try {
                 const query = {
-                    text: "SELECT id, nombre, descripcion, precio, stock FROM Productos",
+                    text: "SELECT id::text, nombre, descripcion, precio, stock FROM Productos",
                     values: [],
+                    //rowMode: "json", // opcional -> por defecto es json
                 };
                 let resultado = await consulta(query);
                 return resolve(resultado);
